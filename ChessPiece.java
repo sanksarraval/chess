@@ -27,6 +27,7 @@ public abstract class ChessPiece{
 		this.type = type;
 		this.color = color;
 		boardRef = theBoard;
+		getGraphic();
 	}
 
 	// --- Accessors ---
@@ -62,7 +63,6 @@ public abstract class ChessPiece{
 	public void setGraphics(String blackGraphic, String whiteGraphic ){
 		graphicBlack = blackGraphic;
 		graphicWhite = whiteGraphic;
-
 	}
 
 	// Is the move from a given tile to a given tile a valid move (for this peice type?)

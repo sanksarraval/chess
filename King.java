@@ -12,6 +12,7 @@ public class King extends ChessPiece
     }
     public King(String name, String newColor, Board theBoard){
         super(name,newColor,theBoard);
+        setGraphics("KingBlack.png","KingWhite.png");
     }
    
 }
