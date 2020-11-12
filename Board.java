@@ -289,7 +289,7 @@ public class Board {
     // Actually doing the hard work. 
     // Ask if the move is valid and let the piece sort it out. 
     // Oops this is calling itself, welcome to recursion. 
-//  isValid = isValidMove(startRow,startCol, endRow, endCol, color);
+    // isValid = isValidMove(startRow,startCol, endRow, endCol, color);
     // We want the version of the method on the ChessPiece
     isValid = toMove.isValidMove(startRow,startCol, endRow, endCol);
 
