@@ -7,14 +7,14 @@
  */
 public class Queen extends ChessPiece
 {
-    String name;
-    Board b;
+    String name;// Private string name.
+    Board b;// Pravate reference to the board b
     public Queen(String newColor, Board theBoard){
         super("Queen",newColor,theBoard);
     }
 
     public Queen(String name, String newColor, Board theBoard){
-        super(name,newColor,theBoard);
+        super(name,newColor,theBoard);// Calling the constructor form the parent class.
         this.name = name;
         color = newColor;
         b = theBoard;
@@ -32,10 +32,11 @@ public class Queen extends ChessPiece
         // Checks is the color is same of not.
         // If the endColor is not same, then it captures it.
         // If the endColor is empty, it will move to the assigned tile.
+        // Queen is the combination of Bishop and Castle.
         if(endColor != startColor || endColor == "EMPTY"){
-            for(int i = 1;i<b.BOARD_SIZE;i++){
-                if((startRow+i==endRow)&&(startCol+i==endCol)||(startRow+i==endRow)&&(startCol-i==endCol)){
-                    if(b.hasPiece(endRow,endCol)){
+            for(int i = 1;i<b.BOARD_SIZE;i++){// for loop to iterate through 1 to 7
+                if((startRow+i==endRow)&&(startCol+i==endCol)||(startRow+i==endRow)&&(startCol-i==endCol)){//Upward Diagonal movement
+                    if(b.hasPiece(endRow,endCol)&& startColor == endColor){
                         retVal = false;
                         break;
                     }
@@ -43,8 +44,8 @@ public class Queen extends ChessPiece
                         retVal = true;
                     }
                 }
-                if((startRow-i==endRow)&&(startCol-i==endCol)||(startRow-i==endRow)&&(startCol+i==endCol)){
-                    if(b.hasPiece(endRow,endCol)){
+                if((startRow-i==endRow)&&(startCol-i==endCol)||(startRow-i==endRow)&&(startCol+i==endCol)){// downward Diagonal movement
+                    if(b.hasPiece(endRow,endCol)&& startColor == endColor){
                         retVal = false;
                         break;
                     }
@@ -52,8 +53,8 @@ public class Queen extends ChessPiece
                         retVal = true;
                     }
                 }
-                if((startRow-i==endRow)&&(startCol==endCol)||(startRow+i==endRow)&&(startCol==endCol)){
-                    if(b.hasPiece(endRow,endCol)){
+                if((startRow-i==endRow)&&(startCol==endCol)||(startRow+i==endRow)&&(startCol==endCol)){// upward straight movement 
+                    if(b.hasPiece(endRow,endCol)&& startColor == endColor){
                         retVal = false;
                         break;
                     }
@@ -61,8 +62,8 @@ public class Queen extends ChessPiece
                         retVal = true;
                     }
                 }
-                if((startRow==endRow)&&(startCol-i==endCol)||(startRow==endRow)&&(startCol+i==endCol)){
-                    if(b.hasPiece(endRow,endCol)){
+                if((startRow==endRow)&&(startCol-i==endCol)||(startRow==endRow)&&(startCol+i==endCol)){// Downward straight Movement.
+                    if(b.hasPiece(endRow,endCol)&& startColor == endColor){
                         retVal = false;
                         break;
                     }

@@ -7,14 +7,14 @@
  */
 public class King extends ChessPiece
 {
-    String name;
-    Board b;
+    private String name;// Private string name.
+    private Board b;// Pravate reference to the board b
     public King(String newColor, Board theBoard){
         super("King",newColor,theBoard);
     }
 
     public King(String name, String newColor, Board theBoard){
-        super(name,newColor,theBoard);
+        super(name,newColor,theBoard);// Calling the constructor form the parent class.
         this.name = name;
         color = newColor;
         b = theBoard;
@@ -30,9 +30,9 @@ public class King extends ChessPiece
         }
         if(endColor != startColor || endColor == "EMPTY"){
             if((startRow+1==endRow)&&(startCol+1==endCol)||(startRow-1==endRow)&&(startCol-1==endCol)//diagonal east.
-            ||(startRow+1==endRow)&&(startCol-1==endCol)||(startRow-1==endRow)&&(startCol+1==endCol)
-            ||(startRow+1==endRow)&&(startCol == endCol)||(startRow-1==endRow)&&(startCol == endCol)
-            ||(startCol+1==endCol)&&(startRow == endRow)||(startCol-1==endCol)&&(startRow == endRow))
+            ||(startRow+1==endRow)&&(startCol-1==endCol)||(startRow-1==endRow)&&(startCol+1==endCol)//
+            ||(startRow+1==endRow)&&(startCol == endCol)||(startRow-1==endRow)&&(startCol == endCol)//
+            ||(startCol+1==endCol)&&(startRow == endRow)||(startCol-1==endCol)&&(startRow == endRow))//
             {
                 retVal=true;
             }

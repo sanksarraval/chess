@@ -97,6 +97,8 @@ public abstract class ChessPiece{
         return retVal;
     }
     /*
+     * Tried to make methods for Castle and Bishop, didn't work out :(
+     * 
     public boolean castleValidMove(int startRow, int startCol, int endRow, int endCol){
         boolean retVal = false;
         Board b = new Board();
